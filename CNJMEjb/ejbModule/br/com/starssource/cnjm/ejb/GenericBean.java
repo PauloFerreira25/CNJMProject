@@ -6,16 +6,16 @@ import javax.persistence.PersistenceContext;
 
 import br.com.starssource.cnjm.entidade.Pessoa;
 
-@Stateless(name = "PessoaBean", mappedName = "PessoaBean") 
-public class PessoaBean {
+@Stateless(name = "GenericBean", mappedName = "GenericBean") 
+public class GenericBean {
 
 	@PersistenceContext(unitName="CJNMEntity")
 	protected EntityManager em;
 
-	public Boolean salvar(Pessoa pessoa) {
+	public Boolean salvar(Object objeto) {
 		try {
 			// userTransaction.begin();
-			em.persist(pessoa);
+			em.persist(objeto);
 			// userTransaction.commit();
 			return true;
 		} catch (Exception e) {

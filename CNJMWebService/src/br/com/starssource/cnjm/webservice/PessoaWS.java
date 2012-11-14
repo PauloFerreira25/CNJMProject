@@ -6,7 +6,7 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 
 import br.com.starssource.cnjm.entidade.Pessoa;
-import br.com.starssource.cnjm.mbean.PessoaMB;
+import br.com.starssource.cnjm.mbean.GenericMB;
 import br.com.starssource.common.utils.log.Logger;
 
 @WebService(name = "PessoaWS", serviceName = "PessoaWS", targetNamespace = "http://starssource.com.br/CNJMwebService/PessoaWS")
@@ -19,7 +19,7 @@ public class PessoaWS {
 		log.setMetodo("addPessoa");
 		log.debug("Adcionar Pessoa");
 		try {
-			PessoaMB a = new PessoaMB();
+			GenericMB a = new GenericMB();
 			return a.incluir(pessoa);
 		} catch (Exception e) {
 			log.error("Erro no insert de pessoa", e);
