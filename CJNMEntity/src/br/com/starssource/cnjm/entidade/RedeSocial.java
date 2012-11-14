@@ -34,11 +34,11 @@ public class RedeSocial implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@XmlElement(name = "nome")
 	@Column
 	private String nome;
-	
+
 	@XmlElement(name = "url")
 	@Column
 	private String url;
@@ -74,6 +74,5 @@ public class RedeSocial implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
 
 }

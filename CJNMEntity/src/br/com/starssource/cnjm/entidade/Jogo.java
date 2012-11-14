@@ -11,24 +11,21 @@ import javax.xml.bind.annotation.XmlElement;
 
 /**
  * Entity implementation class for Entity: Jogo
- *
+ * 
  */
 @Entity
-
 public class Jogo implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
 
 	@XmlElement(name = "nome")
 	@Column(nullable = false)
 	private String nome;
-	
+
 	public Jogo() {
 		super();
 	}
@@ -52,5 +49,5 @@ public class Jogo implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-   
+
 }

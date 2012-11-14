@@ -12,16 +12,13 @@ import javax.persistence.OneToOne;
 
 /**
  * Entity implementation class for Entity: Jogo_Jogador
- *
+ * 
  */
 @Entity
-
 public class Jogador_Jogo implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -31,10 +28,10 @@ public class Jogador_Jogo implements Serializable {
 
 	@ManyToOne
 	private Jogador jogador;
-	
+
 	@Column
 	private Integer level;
-	
+
 	public Jogador_Jogo() {
 		super();
 	}
@@ -74,6 +71,5 @@ public class Jogador_Jogo implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-   
-	
+
 }

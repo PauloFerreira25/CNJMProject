@@ -27,7 +27,4 @@ public class PessoaWS {
 		}
 
 	}
-//asdasd
-	//asdasd
-	//asdasd
 }

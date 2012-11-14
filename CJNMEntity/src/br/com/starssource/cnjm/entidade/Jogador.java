@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -23,7 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 @Entity
 @XmlRootElement(name = "Jogador")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "produto", propOrder = { "jogo", "personagens", "inicioJogarRPG" })
+@XmlType(name = "produto", propOrder = { "jogo", "personagens",
+		"inicioJogarRPG" })
 public class Jogador extends Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -35,10 +35,9 @@ public class Jogador extends Pessoa implements Serializable {
 	@XmlElement(name = "personagens")
 	@OneToMany(mappedBy = "jogador", targetEntity = Personagem.class)
 	private List<Personagem> personagens;
-	
+
 	@XmlElement(name = "inicioJogarRPG")
 	@Column(nullable = false)
-	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Calendar inicioJogarRPG;
 

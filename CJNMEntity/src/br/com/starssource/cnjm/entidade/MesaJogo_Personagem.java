@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
 
 /**
  * Entity implementation class for Entity: MesaJogo_Personagem
@@ -28,9 +27,8 @@ public class MesaJogo_Personagem implements Serializable {
 
 	@ManyToOne
 	private Personagem personagem;
-	
+
 	@Column(nullable = false)
-	@NotNull
 	private Boolean personagemAtivo = true;
 
 	public MesaJogo_Personagem() {

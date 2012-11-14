@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -38,19 +37,16 @@ public class Pessoa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@XmlElement(name = "nome")
+	@XmlElement(name = "nome", required = true)
 	@Column(nullable = false)
-	@NotNull
 	private String nome;
 
-	@XmlElement(name = "email")
+	@XmlElement(name = "email", required = true)
 	@Column(nullable = false)
-	@NotNull
 	private String email;
 
-	@XmlElement(name = "senha")
+	@XmlElement(name = "senha", required = true)
 	@Column(nullable = false)
-	@NotNull
 	private String senha;
 
 	@XmlElement(name = "listaRedeSocial")
