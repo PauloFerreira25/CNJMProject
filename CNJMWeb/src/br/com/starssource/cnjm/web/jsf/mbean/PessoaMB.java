@@ -13,47 +13,31 @@ import br.com.starssource.cnjm.entidade.Pessoa;
 public class PessoaMB extends Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	transient int nid = 0;
-	transient Boolean editable = false;
-	private static final ArrayList<Pessoa> pessoaList = new ArrayList<Pessoa>();
+	
+	private static final ArrayList<Pessoa> lista = new ArrayList<Pessoa>();
 
-	public ArrayList<Pessoa> getPessoaList() {
-		return pessoaList;
+	public ArrayList<Pessoa> getlista() {
+		return lista;
 	}
 
-	public int getNid() {
-		return nid;
+	public int getNlista() {
+		return lista.size();
 	}
 
-	public void setNid(int nid) {
-		this.nid = nid;
-	}
-
-	public Boolean getEditable() {
-		return editable;
-	}
-
-	public void setEditable(Boolean editable) {
-		this.editable = editable;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
-	public static ArrayList<Pessoa> getPessoalist() {
-		return pessoaList;
-	}
-
 	public String saveAction(Pessoa pessoa) {
-		this.setEditable(false);
+		pessoa.setEditable(false);
 		System.out.println(pessoa.getNome());
 		return null;
 
 	}
 
 	public String editAction(Pessoa pessoa) {
-		this.setEditable(true);
+		pessoa.setEditable(true);
 		return null;
 	}
 
@@ -62,12 +46,12 @@ public class PessoaMB extends Pessoa implements Serializable {
 		pessoa.setNome(this.getNome());
 		pessoa.setSenha(this.getSenha());
 		pessoa.setEmail(this.getEmail());
-		pessoaList.add(pessoa);
+		lista.add(pessoa);
 		return null;
 	}
 
 	public String deleteAction(Pessoa pessoa) {
-		pessoaList.remove(pessoa);
+		lista.remove(pessoa);
 		return null;
 	}
 

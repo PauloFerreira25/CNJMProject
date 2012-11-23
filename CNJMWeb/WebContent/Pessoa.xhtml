@@ -10,23 +10,23 @@
 <h:body>
 
 	<h1>Tela de Pessoa</h1>
-	<h:outputText id="nid" value=" Number of pessoas : #{pessoa.nid}" />
+	<h:outputText id="nlista" value=" Number of pessoas : #{pessoa.nlista}" />
 
 	<h:form id="updatePessoa">
-		<h:dataTable value="#{pessoa.pessoaList}" var="o"
-			styleClass="pessoa-table" headerClass="pessoa-table-header"
+		<h:dataTable value="#{pessoa.lista}" var="p" styleClass="pessoa-table"
+			headerClass="pessoa-table-header"
 			rowClasses="pessoa-table-odd-row,pessoa-table-even-row">
 
 			<h:column>
 				<f:facet name="header">ID</f:facet>
-				<h:outputText value="#{p.pessoaId}" size="10" maxlength="10" id="id" />
+				<h:outputText value="#{p.id}" size="10" maxlength="10" id="id" />
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">Nome</f:facet>
-				<h:inputText value="#{p.Nome}" size="20" maxlength="20"
+				<h:inputText value="#{p.nome}" size="20" maxlength="20"
 					rendered="#{p.editable}" id="nome" />
-				<h:outputText value="#{p.Nome}" rendered="#{not p.editable}" />
+				<h:outputText value="#{p.nome}" rendered="#{not p.editable}" />
 			</h:column>
 
 			<h:column>
@@ -45,16 +45,16 @@
 
 			<h:column>
 				<f:facet name="header">Edit</f:facet>
-				<h:commandLink value="Edit" action="#{pessoa.editAction(o)}"
+				<h:commandLink value="Edit" action="#{pessoa.editAction(p)}"
 					rendered="#{not p.editable}" />
-				<h:commandButton value="Save" action="#{pessoa.saveAction(o)}"
+				<h:commandButton value="Save" action="#{pessoa.saveAction(p)}"
 					rendered="#{p.editable}" />
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">Delete</f:facet>
 				<h:commandLink value="Delete" immediate="true"
-					action="#{pessoa.deleteAction(o)}" rendered="#{not p.editable}" />
+					action="#{pessoa.deleteAction(p)}" rendered="#{not p.editable}" />
 			</h:column>
 
 		</h:dataTable>
