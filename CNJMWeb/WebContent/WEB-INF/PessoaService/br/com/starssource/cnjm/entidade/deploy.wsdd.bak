@@ -1,0 +1,291 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from PessoaService WSDL service -->
+
+  <service name="Pessoa" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://entidade.cnjm.starssource.com.br"/>
+      <parameter name="wsdlServiceElement" value="PessoaService"/>
+      <parameter name="schemaQualified" value="http://entidade.cnjm.starssource.com.br"/>
+      <parameter name="wsdlServicePort" value="Pessoa"/>
+      <parameter name="className" value="br.com.starssource.cnjm.entidade.PessoaSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Pessoa"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getSenha" qname="operNS:getSenha" xmlns:operNS="http://entidade.cnjm.starssource.com.br" returnQName="retNS:getSenhaReturn" xmlns:retNS="http://entidade.cnjm.starssource.com.br" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getSerialversionuid" qname="operNS:getSerialversionuid" xmlns:operNS="http://entidade.cnjm.starssource.com.br" returnQName="retNS:getSerialversionuidReturn" xmlns:retNS="http://entidade.cnjm.starssource.com.br" returnType="rtns:long" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getListaRedeSocial" qname="operNS:getListaRedeSocial" xmlns:operNS="http://entidade.cnjm.starssource.com.br" returnQName="retNS:getListaRedeSocialReturn" xmlns:retNS="http://entidade.cnjm.starssource.com.br" returnType="rtns:ArrayOf_xsd_anyType" xmlns:rtns="http://entidade.cnjm.starssource.com.br" returnItemQName="tns:item" xmlns:tns="http://entidade.cnjm.starssource.com.br" soapAction="" >
+      </operation>
+      <operation name="setListaRedeSocial" qname="operNS:setListaRedeSocial" xmlns:operNS="http://entidade.cnjm.starssource.com.br" soapAction="" >
+        <parameter qname="pns:listaRedeSocial" xmlns:pns="http://entidade.cnjm.starssource.com.br" type="tns:ArrayOf_xsd_anyType" xmlns:tns="http://entidade.cnjm.starssource.com.br" itemQName="itns:item" xmlns:itns="http://entidade.cnjm.starssource.com.br"/>
+      </operation>
+      <operation name="setSenha" qname="operNS:setSenha" xmlns:operNS="http://entidade.cnjm.starssource.com.br" soapAction="" >
+        <parameter qname="pns:senha" xmlns:pns="http://entidade.cnjm.starssource.com.br" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setNome" qname="operNS:setNome" xmlns:operNS="http://entidade.cnjm.starssource.com.br" soapAction="" >
+        <parameter qname="pns:nome" xmlns:pns="http://entidade.cnjm.starssource.com.br" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getNome" qname="operNS:getNome" xmlns:operNS="http://entidade.cnjm.starssource.com.br" returnQName="retNS:getNomeReturn" xmlns:retNS="http://entidade.cnjm.starssource.com.br" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="toString" qname="operNS:toString" xmlns:operNS="http://entidade.cnjm.starssource.com.br" returnQName="retNS:toStringReturn" xmlns:retNS="http://entidade.cnjm.starssource.com.br" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getId" qname="operNS:getId" xmlns:operNS="http://entidade.cnjm.starssource.com.br" returnQName="retNS:getIdReturn" xmlns:retNS="http://entidade.cnjm.starssource.com.br" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setId" qname="operNS:setId" xmlns:operNS="http://entidade.cnjm.starssource.com.br" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://entidade.cnjm.starssource.com.br" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setEditable" qname="operNS:setEditable" xmlns:operNS="http://entidade.cnjm.starssource.com.br" soapAction="" >
+        <parameter qname="pns:editable" xmlns:pns="http://entidade.cnjm.starssource.com.br" type="tns:boolean" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getEditable" qname="operNS:getEditable" xmlns:operNS="http://entidade.cnjm.starssource.com.br" returnQName="retNS:getEditableReturn" xmlns:retNS="http://entidade.cnjm.starssource.com.br" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setEmail" qname="operNS:setEmail" xmlns:operNS="http://entidade.cnjm.starssource.com.br" soapAction="" >
+        <parameter qname="pns:email" xmlns:pns="http://entidade.cnjm.starssource.com.br" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getEmail" qname="operNS:getEmail" xmlns:operNS="http://entidade.cnjm.starssource.com.br" returnQName="retNS:getEmailReturn" xmlns:retNS="http://entidade.cnjm.starssource.com.br" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getEditable setEmail setSenha getListaRedeSocial getNome setNome getEmail setEditable getSenha getSerialversionuid toString setListaRedeSocial getId setId"/>
+
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getSerialversionuidResponse"
+        type="java:br.com.starssource.cnjm.entidade.GetSerialversionuidResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>toStringResponse"
+        type="java:br.com.starssource.cnjm.entidade.ToStringResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getListaRedeSocialResponse"
+        type="java:br.com.starssource.cnjm.entidade.GetListaRedeSocialResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setListaRedeSocialResponse"
+        type="java:br.com.starssource.cnjm.entidade.SetListaRedeSocialResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getSenha"
+        type="java:br.com.starssource.cnjm.entidade.GetSenha"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setEmailResponse"
+        type="java:br.com.starssource.cnjm.entidade.SetEmailResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setIdResponse"
+        type="java:br.com.starssource.cnjm.entidade.SetIdResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getEditableResponse"
+        type="java:br.com.starssource.cnjm.entidade.GetEditableResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setNome"
+        type="java:br.com.starssource.cnjm.entidade.SetNome"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setEditableResponse"
+        type="java:br.com.starssource.cnjm.entidade.SetEditableResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getEmailResponse"
+        type="java:br.com.starssource.cnjm.entidade.GetEmailResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getNome"
+        type="java:br.com.starssource.cnjm.entidade.GetNome"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getSenhaResponse"
+        type="java:br.com.starssource.cnjm.entidade.GetSenhaResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>toString"
+        type="java:br.com.starssource.cnjm.entidade.ToString"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:ArrayOf_xsd_anyType"
+        type="java:java.lang.Object[]"
+        innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setNomeResponse"
+        type="java:br.com.starssource.cnjm.entidade.SetNomeResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getNomeResponse"
+        type="java:br.com.starssource.cnjm.entidade.GetNomeResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setSenhaResponse"
+        type="java:br.com.starssource.cnjm.entidade.SetSenhaResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getSerialversionuid"
+        type="java:br.com.starssource.cnjm.entidade.GetSerialversionuid"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getEditable"
+        type="java:br.com.starssource.cnjm.entidade.GetEditable"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getListaRedeSocial"
+        type="java:br.com.starssource.cnjm.entidade.GetListaRedeSocial"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getEmail"
+        type="java:br.com.starssource.cnjm.entidade.GetEmail"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setSenha"
+        type="java:br.com.starssource.cnjm.entidade.SetSenha"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setEmail"
+        type="java:br.com.starssource.cnjm.entidade.SetEmail"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setEditable"
+        type="java:br.com.starssource.cnjm.entidade.SetEditable"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setListaRedeSocial"
+        type="java:br.com.starssource.cnjm.entidade.SetListaRedeSocial"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getIdResponse"
+        type="java:br.com.starssource.cnjm.entidade.GetIdResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>getId"
+        type="java:br.com.starssource.cnjm.entidade.GetId"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://entidade.cnjm.starssource.com.br"
+        qname="ns:>setId"
+        type="java:br.com.starssource.cnjm.entidade.SetId"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

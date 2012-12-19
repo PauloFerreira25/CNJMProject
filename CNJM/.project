@@ -3,11 +3,11 @@
 	<name>CNJM</name>
 	<comment></comment>
 	<projects>
-		<project>CNJMWeb</project>
-		<project>CNJMWebService</project>
-		<project>CommonsUtils</project>
 		<project>CJNMEntity</project>
 		<project>CNJMEjb</project>
+		<project>CNJMWeb</project>
+		<project>CNJMWebService</project>
+		<project>GenericUtilCommons</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

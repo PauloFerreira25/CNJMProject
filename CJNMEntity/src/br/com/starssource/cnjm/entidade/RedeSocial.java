@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -23,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
 @Inheritance(strategy = InheritanceType.JOINED)
 @XmlRootElement(name = "RedeSocial")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "redeSocial", propOrder = { "id", "nome", "url" })
+@XmlType(name = "redeSocial", propOrder = { "id", "nome", "url", "pessoa" })
 @Entity
 public class RedeSocial implements Serializable {
 
@@ -42,6 +43,9 @@ public class RedeSocial implements Serializable {
 	@XmlElement(name = "url")
 	@Column
 	private String url;
+
+	@ManyToOne
+	private Pessoa pessoa;
 
 	public RedeSocial() {
 		super();

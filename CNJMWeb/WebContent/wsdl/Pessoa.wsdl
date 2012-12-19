@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://entidade.cnjm.starssource.com.br" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://entidade.cnjm.starssource.com.br" xmlns:intf="http://entidade.cnjm.starssource.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://entidade.cnjm.starssource.com.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getSenha">
+    <complexType/>
+   </element>
+   <element name="getSenhaResponse">
+    <complexType>
+     <sequence>
+      <element name="getSenhaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSerialversionuid">
+    <complexType/>
+   </element>
+   <element name="getSerialversionuidResponse">
+    <complexType>
+     <sequence>
+      <element name="getSerialversionuidReturn" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getListaRedeSocial">
+    <complexType/>
+   </element>
+   <element name="getListaRedeSocialResponse">
+    <complexType>
+     <sequence>
+      <element name="getListaRedeSocialReturn" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="setListaRedeSocial">
+    <complexType>
+     <sequence>
+      <element name="listaRedeSocial" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setListaRedeSocialResponse">
+    <complexType/>
+   </element>
+   <element name="setSenha">
+    <complexType>
+     <sequence>
+      <element name="senha" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setSenhaResponse">
+    <complexType/>
+   </element>
+   <element name="setNome">
+    <complexType>
+     <sequence>
+      <element name="nome" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNomeResponse">
+    <complexType/>
+   </element>
+   <element name="getNome">
+    <complexType/>
+   </element>
+   <element name="getNomeResponse">
+    <complexType>
+     <sequence>
+      <element name="getNomeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="toString">
+    <complexType/>
+   </element>
+   <element name="toStringResponse">
+    <complexType>
+     <sequence>
+      <element name="toStringReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getId">
+    <complexType/>
+   </element>
+   <element name="getIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getIdReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setId">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setIdResponse">
+    <complexType/>
+   </element>
+   <element name="setEditable">
+    <complexType>
+     <sequence>
+      <element name="editable" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setEditableResponse">
+    <complexType/>
+   </element>
+   <element name="getEditable">
+    <complexType/>
+   </element>
+   <element name="getEditableResponse">
+    <complexType>
+     <sequence>
+      <element name="getEditableReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setEmail">
+    <complexType>
+     <sequence>
+      <element name="email" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setEmailResponse">
+    <complexType/>
+   </element>
+   <element name="getEmail">
+    <complexType/>
+   </element>
+   <element name="getEmailResponse">
+    <complexType>
+     <sequence>
+      <element name="getEmailReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setSenhaResponse">
+
+      <wsdl:part element="impl:setSenhaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setListaRedeSocialResponse">
+
+      <wsdl:part element="impl:setListaRedeSocialResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEmailRequest">
+
+      <wsdl:part element="impl:setEmail" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEmailResponse">
+
+      <wsdl:part element="impl:getEmailResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEditableRequest">
+
+      <wsdl:part element="impl:setEditable" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSerialversionuidResponse">
+
+      <wsdl:part element="impl:getSerialversionuidResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEditableRequest">
+
+      <wsdl:part element="impl:getEditable" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSenhaResponse">
+
+      <wsdl:part element="impl:getSenhaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIdRequest">
+
+      <wsdl:part element="impl:getId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSenhaRequest">
+
+      <wsdl:part element="impl:getSenha" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="toStringRequest">
+
+      <wsdl:part element="impl:toString" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNomeRequest">
+
+      <wsdl:part element="impl:setNome" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEditableResponse">
+
+      <wsdl:part element="impl:getEditableResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setIdResponse">
+
+      <wsdl:part element="impl:setIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListaRedeSocialRequest">
+
+      <wsdl:part element="impl:getListaRedeSocial" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNomeResponse">
+
+      <wsdl:part element="impl:setNomeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSenhaRequest">
+
+      <wsdl:part element="impl:setSenha" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIdResponse">
+
+      <wsdl:part element="impl:getIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setListaRedeSocialRequest">
+
+      <wsdl:part element="impl:setListaRedeSocial" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNomeResponse">
+
+      <wsdl:part element="impl:getNomeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSerialversionuidRequest">
+
+      <wsdl:part element="impl:getSerialversionuid" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEditableResponse">
+
+      <wsdl:part element="impl:setEditableResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNomeRequest">
+
+      <wsdl:part element="impl:getNome" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListaRedeSocialResponse">
+
+      <wsdl:part element="impl:getListaRedeSocialResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEmailRequest">
+
+      <wsdl:part element="impl:getEmail" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setEmailResponse">
+
+      <wsdl:part element="impl:setEmailResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="toStringResponse">
+
+      <wsdl:part element="impl:toStringResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setIdRequest">
+
+      <wsdl:part element="impl:setId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Pessoa">
+
+      <wsdl:operation name="getSenha">
+
+         <wsdl:input message="impl:getSenhaRequest" name="getSenhaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSenhaResponse" name="getSenhaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSerialversionuid">
+
+         <wsdl:input message="impl:getSerialversionuidRequest" name="getSerialversionuidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSerialversionuidResponse" name="getSerialversionuidResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListaRedeSocial">
+
+         <wsdl:input message="impl:getListaRedeSocialRequest" name="getListaRedeSocialRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getListaRedeSocialResponse" name="getListaRedeSocialResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setListaRedeSocial">
+
+         <wsdl:input message="impl:setListaRedeSocialRequest" name="setListaRedeSocialRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setListaRedeSocialResponse" name="setListaRedeSocialResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSenha">
+
+         <wsdl:input message="impl:setSenhaRequest" name="setSenhaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setSenhaResponse" name="setSenhaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNome">
+
+         <wsdl:input message="impl:setNomeRequest" name="setNomeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNomeResponse" name="setNomeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNome">
+
+         <wsdl:input message="impl:getNomeRequest" name="getNomeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNomeResponse" name="getNomeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="toString">
+
+         <wsdl:input message="impl:toStringRequest" name="toStringRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:toStringResponse" name="toStringResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getId">
+
+         <wsdl:input message="impl:getIdRequest" name="getIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getIdResponse" name="getIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setId">
+
+         <wsdl:input message="impl:setIdRequest" name="setIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setIdResponse" name="setIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEditable">
+
+         <wsdl:input message="impl:setEditableRequest" name="setEditableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setEditableResponse" name="setEditableResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEditable">
+
+         <wsdl:input message="impl:getEditableRequest" name="getEditableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEditableResponse" name="getEditableResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEmail">
+
+         <wsdl:input message="impl:setEmailRequest" name="setEmailRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setEmailResponse" name="setEmailResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEmail">
+
+         <wsdl:input message="impl:getEmailRequest" name="getEmailRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEmailResponse" name="getEmailResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PessoaSoapBinding" type="impl:Pessoa">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getSenha">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSenhaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSenhaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSerialversionuid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSerialversionuidRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSerialversionuidResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListaRedeSocial">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getListaRedeSocialRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getListaRedeSocialResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setListaRedeSocial">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setListaRedeSocialRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setListaRedeSocialResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSenha">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSenhaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSenhaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNome">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNomeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNomeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNome">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNomeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNomeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="toString">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="toStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="toStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEditable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setEditableRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setEditableResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEditable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEditableRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEditableResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setEmail">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setEmailRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setEmailResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEmail">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEmailRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEmailResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PessoaService">
+
+      <wsdl:port binding="impl:PessoaSoapBinding" name="Pessoa">
+
+         <wsdlsoap:address location="http://localhost:8080/CNJMWeb/services/Pessoa"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

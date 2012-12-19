@@ -5,7 +5,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import br.com.starssource.common.utils.log.Logger;
-
 @Stateless
 public class GenericBean {
 

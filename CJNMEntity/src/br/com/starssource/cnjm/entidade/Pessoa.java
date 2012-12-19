@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -51,12 +52,12 @@ public class Pessoa implements Serializable {
 	private String senha;
 
 	@XmlElement(name = "listaRedeSocial")
-	@ManyToMany
+	@OneToMany(mappedBy = "pessoa")
 	private List<RedeSocial> listaRedeSocial;
 
 	@Transient
 	private transient Boolean editable = false;
-	
+
 	public Pessoa() {
 		super();
 	}
@@ -105,7 +106,6 @@ public class Pessoa implements Serializable {
 		this.listaRedeSocial = listaRedeSocial;
 	}
 
-	
 	public Boolean getEditable() {
 		return editable;
 	}
